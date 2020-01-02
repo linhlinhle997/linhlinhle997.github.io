@@ -1,5 +1,9 @@
 
 from PIL import Image
+import numpy as np
+import cv2
+
+	
 
 def showsize ():
 	im = Image.open('pic.jpg')
@@ -49,7 +53,7 @@ def crop():
 	thumb.save('client-02.jpg')
 
 
-showsize()
+#showsize()
 #crop()
 #crop_image("personal.jpg","personal", 10, 0, 800, 956)
 #resize()

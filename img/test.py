@@ -2,19 +2,19 @@
 from PIL import Image
 
 def showsize ():
-	im = Image.open('logo.jpg')
+	im = Image.open('pic.jpg')
 	width, height = im.size
 	print(width, height)
 
 def resize():
-	img = Image.open("logo.jpg")
+	img = Image.open("pic.jpg")
 	width, height = img.size
 	new_width  = 50
 	new_height = new_width * height / width 
 	new_height = 50
 	new_width  = new_height * width / height
 	img = img.resize((int(new_width), int(new_height)), Image.ANTIALIAS)
-	img.save("logo.jpg")
+	img.save("pic.jpg")
 	
 def crop_image(input_image, output_image, start_x, start_y, width, height):
     input_img = Image.open(input_image)
@@ -49,9 +49,9 @@ def crop():
 	thumb.save('client-02.jpg')
 
 
-#showsize()
+showsize()
 #crop()
 #crop_image("personal.jpg","personal", 10, 0, 800, 956)
-resize()
+#resize()
 
 

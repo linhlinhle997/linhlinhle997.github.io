@@ -6,19 +6,19 @@ import cv2
 	
 
 def showsize ():
-	im = Image.open('pic.jpg')
+	im = Image.open('personal-03-crop.jpg')
 	width, height = im.size
 	print(width, height)
 
 def resize():
-	img = Image.open("pic.jpg")
+	img = Image.open("personal-03.jpg")
 	width, height = img.size
-	new_width  = 50
-	new_height = new_width * height / width 
-	new_height = 50
+	new_width  = 563
+	new_height = 690
 	new_width  = new_height * width / height
+	new_height = new_width * height / width 
 	img = img.resize((int(new_width), int(new_height)), Image.ANTIALIAS)
-	img.save("pic.jpg")
+	img.save("personal-03-resize.jpg")
 	
 def crop_image(input_image, output_image, start_x, start_y, width, height):
     input_img = Image.open(input_image)
@@ -27,14 +27,14 @@ def crop_image(input_image, output_image, start_x, start_y, width, height):
     output_img.save(output_image + ".jpg")
 
 def crop():
-	image  = Image.open('client-03.jpg')
+	image  = Image.open('personal-05.jpg')
 	width  = image.size[0]
 	height = image.size[1]
 
 	aspect = width / float(height)
 
-	ideal_width = 781
-	ideal_height = 956
+	ideal_width = 563
+	ideal_height = 690
 
 	ideal_aspect = ideal_width / float(ideal_height)
 
@@ -50,12 +50,12 @@ def crop():
 		resize = (0, offset, width, height - offset)
 
 	thumb = image.crop(resize).resize((ideal_width, ideal_height), Image.ANTIALIAS)
-	thumb.save('client-02.jpg')
+	thumb.save('personal-05.jpg')
 
 
 #showsize()
-#crop()
-#crop_image("personal.jpg","personal", 10, 0, 800, 956)
+crop()
+#crop_image("personal-03.jpg","personal-03-crop_image.jpg", 0, 0, 563, 690)
 #resize()
 
 

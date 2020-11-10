@@ -67,8 +67,28 @@
            		<div class="banner_inner d-flex align-items-center">
 					<div class="banner_content">
 						<div class="media">
-							<div class="d-flex">
-								<img src="img/personal-02.jpg" alt="">
+							<div class="d-flex" style="max-width:600px">
+								<!-- <img src="img/personal-02.jpg" alt=""> -->
+								<img class="mySlides" src="img/personal-02.jpg" style="width:100%">
+								<img class="mySlides" src="img/personal-03.jpg" style="width:100%">
+								<img class="mySlides" src="img/personal-04.jpg" style="width:100%">
+								<img class="mySlides" src="img/personal-05.jpg" style="width:100%">
+								<script>
+									var slideIndex = 0;
+									carousel();
+
+									function carousel() {
+										var i;
+										var x = document.getElementsByClassName("mySlides");
+										for (i = 0; i < x.length; i++) {
+											x[i].style.display = "none";
+										}
+										slideIndex++;
+										if (slideIndex > x.length) {slideIndex = 1}
+										x[slideIndex-1].style.display = "block";
+										setTimeout(carousel, 3000); // Change image every 3 seconds
+									}
+								</script>
 							</div>
 							<div class="media-body">
 								<div class="personal_text">

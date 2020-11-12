@@ -6,12 +6,12 @@ import cv2
 	
 
 def showsize ():
-	im = Image.open('personal-03-crop.jpg')
+	im = Image.open('personal-03-resize.jpg')
 	width, height = im.size
 	print(width, height)
 
 def resize():
-	img = Image.open("personal-03.jpg")
+	img = Image.open("personal-05.jpg")
 	width, height = img.size
 	new_width  = 563
 	new_height = 690
@@ -50,11 +50,10 @@ def crop():
 		resize = (0, offset, width, height - offset)
 
 	thumb = image.crop(resize).resize((ideal_width, ideal_height), Image.ANTIALIAS)
-	thumb.save('personal-05.jpg')
+	thumb.save('personal-05-out.jpg')
 
-
-#showsize()
-crop()
+#crop()
+showsize()
 #crop_image("personal-03.jpg","personal-03-crop_image.jpg", 0, 0, 563, 690)
 #resize()
 
